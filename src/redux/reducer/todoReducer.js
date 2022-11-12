@@ -3,7 +3,6 @@ import { ADD_LIST, ACTIVE_LIST, COMPLETED_LIST, REMOVE_LIST, EDIT_LIST, DONE_LIS
 const initialState = {
     active: ["Buy Milk", "Buy T-Shirt"],
     completed: ["done 1", "done 2"],
-    panggil: ""
 }
 
 function todoReducer(state = initialState, action) {
@@ -12,6 +11,7 @@ function todoReducer(state = initialState, action) {
     switch(action.type) {
         case ADD_LIST:
             return {
+                ...initialState,
                 active: [...state.active, action.add]
             }
         case ACTIVE_LIST:
@@ -24,8 +24,13 @@ function todoReducer(state = initialState, action) {
             }
         case DONE_LIST:
             console.log("done list dipanggil", action.index)
+            console.log("task selesai: ", state.active[action.index])
+            const doneTask = state.active[action.index]
+            const newTodo = state.active.filter((item, index) => index != action.index)
             return {
-                ...initialState, panggil: "done"
+                ...initialState,
+                active: newTodo,
+                completed: [...state.completed, doneTask]
             }
         case REMOVE_LIST:
             return {

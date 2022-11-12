@@ -6,8 +6,9 @@ import List from './List'
 
 const TodoList = () => {
     const { active } = useSelector(state => state);
-    const { panggil } = useSelector(state => state);
+    const { completed } = useSelector(state => state);
     console.log(active)
+    console.log(completed)
 
     return (
         <>
@@ -17,7 +18,7 @@ const TodoList = () => {
             {active.map((item, index) => (
                 <List key={index} value={item} urutan={index} />
             ))}
-            <p>{panggil}</p>
+            <p>{completed}</p>
         </>
     )
 }
