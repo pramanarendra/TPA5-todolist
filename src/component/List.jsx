@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import '../styles/list.css'
 import DoneIcon from '../assets/done-icon.svg'
 import EditIcon from '../assets/edit-icon.svg'
 import DeleteIcon from '../assets/delete-icon.svg'
@@ -36,31 +35,43 @@ const List = (props) => {
     }
 
     return (
-        <div className='list-container'>
-            <div className='left-list'>
-                <img src={DoneIcon} alt="" onClick={() => handleDone(props.urutan)} />
-                <p>{props.value}</p>
-                <p>{props.urutan}</p>
-            </div>
-            <div className='right-list'>
-                <img src={EditIcon} alt="" onClick={() => toggleEdit(props.urutan)} />
-                <img src={DeleteIcon} alt="" onClick={() => handleRemove(props.urutan)} />
-            </div>
+        <>
 
+            <div className='list-container'>
+                <div className='left-list'>
+                    {props.button &&
+                        <img src={DoneIcon} alt="" onClick={() => handleDone(props.urutan)} />
+                    }
+                    <p>{props.value}</p>
+                </div>
+                {
+                    props.button &&
+                    <div className='right-list'>
+                        <img src={EditIcon} alt="" onClick={() => toggleEdit(props.urutan)} />
+                        <img src={DeleteIcon} alt="" onClick={() => handleRemove(props.urutan)} />
+                    </div>
+                }
+
+            </div>
             {
                 isEditPopUp &&
                 <div className='edit-popup'>
                     <form action="" onSubmit={(e) => handleEdit(props.urutan, e)}>
                         <label htmlFor="">Edit Task</label>
-                        <input type="text" />
-                        <div>
+                        <input type="text" placeholder={props.value} />
+                        <div className='button'>
                             <p onClick={() => toggleEdit(props.urutan)}>Batalkan Edit</p>
                             <button type='submit'>Edit To Do</button>
                         </div>
                     </form>
                 </div>
             }
-        </div>
+
+            {
+                isEditPopUp &&
+                <div className='overlay'></div>
+            }
+        </>
     )
 }
 

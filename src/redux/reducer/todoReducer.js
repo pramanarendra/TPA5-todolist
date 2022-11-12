@@ -1,8 +1,8 @@
-import { ADD_LIST, ACTIVE_LIST, COMPLETED_LIST, REMOVE_LIST, EDIT_LIST, DONE_LIST } from "../action/todoAction";
+import { ADD_LIST, REMOVE_LIST, EDIT_LIST, DONE_LIST } from "../action/todoAction";
 
 const initialState = {
-    active: ["Buy Milk", "Buy T-Shirt"],
-    completed: ["done 1", "done 2"],
+    active: ["Writing test week 8", "Front-end group project"],
+    completed: ["TPA 4 refactor", "TPA 5 to do list"],
 }
 
 function todoReducer(state = initialState, action) {

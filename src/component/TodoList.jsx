@@ -34,23 +34,23 @@ const TodoList = () => {
             <AddBar />
             <nav>
                 <ul>
-                    <li onClick={handleAll}>All</li>
-                    <li onClick={handleActive}>Active</li>
-                    <li onClick={handleCompleted}>Completed</li>
+                    <li onClick={handleAll} className={activeList && completedList ? "active" : ""}>All</li>
+                    <li onClick={handleActive} className={activeList && !completedList ? "active" : ""}>Active</li>
+                    <li onClick={handleCompleted} className={!activeList && completedList ? "active" : ""}>Completed</li>
                 </ul>
             </nav>
 
             {
-                activeList && <section>
+                activeList && <section className='active-list'>
                     {active.map((item, index) => (
-                        <List key={index} value={item} urutan={index} />))}
+                        <List key={index} value={item} urutan={index} button={true} />))}
                 </section>
             }
 
             {
-                completedList && <section>
+                completedList && <section className='completed-list'>
                     {completed.map((item, index) => (
-                        <List key={index} value={item} urutan={index} />))}
+                        <List key={index} value={item} urutan={index} button={false} />))}
                 </section>
             }
         </>

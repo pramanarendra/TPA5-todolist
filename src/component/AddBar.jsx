@@ -13,7 +13,7 @@ const AddBar = () => {
     }
 
     return (
-        <section>
+        <section id='addBar'>
             <form action="" onSubmit={(e) => handleSubmit(e)}>
                 <input type="text" placeholder='What to do' />
                 <button type='submit'>Add</button>
