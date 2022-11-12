@@ -1,0 +1,9 @@
+.list-container {
+    display: flex;
+    align-items: center;
+}
+
+.left-list {
+    display: flex;
+    align-items: center;
+}
