@@ -14,14 +14,6 @@ function todoReducer(state = initialState, action) {
                 ...state,
                 active: [...state.active, action.add]
             }
-        case ACTIVE_LIST:
-            return {
-                panggil: "add"
-            }
-        case COMPLETED_LIST:
-            return {
-                panggil: "add"
-            }
         case DONE_LIST:
             console.log("done list dipanggil", action.index)
             console.log("task selesai: ", state.active[action.index])
