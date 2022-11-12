@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import AddBar from './AddBar'
-import FilterTab from './FilterTab'
 import List from './List'
 
 const TodoList = () => {
+    // ambil to do active dan complete dari store
     const { active } = useSelector(state => state);
     const { completed } = useSelector(state => state);
-    console.log(active)
-    console.log(completed)
 
+    // buat toggle untuk menampilkan all, active, atau completed list
     const [activeList, setActiveList] = useState(true);
     const [completedList, setCompletedList] = useState(true);
 
@@ -40,6 +39,7 @@ const TodoList = () => {
                 </ul>
             </nav>
 
+            {/* mapping data active list */}
             {
                 activeList && <section className='active-list'>
                     {active.map((item, index) => (
@@ -47,6 +47,7 @@ const TodoList = () => {
                 </section>
             }
 
+            {/* mapping data completed list */}
             {
                 completedList && <section className='completed-list'>
                     {completed.map((item, index) => (

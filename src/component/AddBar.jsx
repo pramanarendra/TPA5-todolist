@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { addList } from '../redux/action/todoAction'
 
 const AddBar = () => {
+
+    // memanggil action add list dari redux
     const dispatch = useDispatch()
 
     const handleSubmit = (input) => {
