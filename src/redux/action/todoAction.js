@@ -5,9 +5,10 @@ export const DONE_LIST = "DONE_LIST";
 export const REMOVE_LIST = "REMOVE_LIST";
 export const EDIT_LIST = "EDIT_LIST";
 
-export function addList() {
+export function addList(input) {
     return {
-        type: ADD_LIST
+        type: ADD_LIST,
+        add: input
     }
 }
 

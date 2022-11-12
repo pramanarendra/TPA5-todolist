@@ -6,8 +6,7 @@ import List from './List'
 
 const TodoList = () => {
     const { active } = useSelector(state => state);
-    const { panggil } = useSelector(state => state)
-    console.log(panggil)
+    const { panggil } = useSelector(state => state);
     console.log(active)
 
     return (

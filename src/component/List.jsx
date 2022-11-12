@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/list.css'
 import DoneIcon from '../assets/done-icon.svg'
 import EditIcon from '../assets/edit-icon.svg'
 import DeleteIcon from '../assets/delete-icon.svg'

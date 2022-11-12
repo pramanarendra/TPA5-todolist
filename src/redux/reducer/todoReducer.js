@@ -12,7 +12,7 @@ function todoReducer(state = initialState, action) {
     switch(action.type) {
         case ADD_LIST:
             return {
-                panggil: "add"
+                active: [...state.active, action.add]
             }
         case ACTIVE_LIST:
             return {
