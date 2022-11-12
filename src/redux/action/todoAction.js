@@ -31,14 +31,16 @@ export function doneList(index) {
     }
 }
 
-export function removeList() {
+export function removeList(index) {
     return {
-        type: REMOVE_LIST
+        type: REMOVE_LIST,
+        index
     }
 }
 
-export function editList() {
+export function editList(index,  input) {
     return {
-        type: EDIT_LIST
+        type: EDIT_LIST,
+        index, input
     }
 }
